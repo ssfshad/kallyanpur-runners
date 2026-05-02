@@ -3,25 +3,79 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0A0A0A;
+  --foreground: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #0A0A0A;
+  color: #ffffff;
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Gold gradient text utility */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #D4AF37, #F5D060, #D4AF37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 3px;
+}
+
+/* Selection */
+::selection {
+  background: #D4AF37;
+  color: #000000;
+}
+
+/* Remove default outline, add gold focus */
+:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+
+/* Prose-like rich text for admin-editable areas */
+.prose-dark {
+  color: #cccccc;
+  line-height: 1.8;
+}
+.prose-dark p {
+  margin-bottom: 1rem;
+}
+.prose-dark strong {
+  color: #D4AF37;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .min-touch {
+    min-height: 44px;
+    min-width: 44px;
   }
 }

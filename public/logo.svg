@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" fill="none">
+  <!-- Shield shape -->
+  <path d="M60 4 L108 24 L108 72 Q108 112 60 136 Q12 112 12 72 L12 24 Z" fill="#000000" stroke="#D4AF37" stroke-width="3"/>
+
+  <!-- Gold speed lines -->
+  <line x1="20" y1="60" x2="45" y2="55" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="18" y1="70" x2="42" y2="65" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+  <line x1="20" y1="80" x2="44" y2="76" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Running figure (simplified white silhouette) -->
+  <!-- Head -->
+  <circle cx="72" cy="42" r="6" fill="#FFFFFF"/>
+  <!-- Body -->
+  <line x1="72" y1="48" x2="68" y2="70" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+  <!-- Left arm -->
+  <line x1="70" y1="56" x2="58" y2="62" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Right arm -->
+  <line x1="70" y1="56" x2="82" y2="50" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Left leg -->
+  <line x1="68" y1="70" x2="58" y2="88" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Right leg -->
+  <line x1="68" y1="70" x2="78" y2="86" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- KOLLAYANPUR text top -->
+  <text x="60" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" font-weight="700" fill="#D4AF37" letter-spacing="1">KALLYANPUR</text>
+
+  <!-- RUNNERS text bottom -->
+  <text x="60" y="118" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="700" fill="#D4AF37" letter-spacing="2">RUNNERS</text>
+</svg>
