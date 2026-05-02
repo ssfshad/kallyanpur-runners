@@ -35,6 +35,14 @@ create table if not exists gallery (
   created_at timestamptz default now()
 );
 
+-- Hero slideshow images (separate from gallery)
+create table if not exists hero_slides (
+  id uuid primary key default gen_random_uuid(),
+  image_url text not null,
+  sort_order int default 0,
+  created_at timestamptz default now()
+);
+
 -- Team members
 create table if not exists team_members (
   id uuid primary key default gen_random_uuid(),

@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
@@ -7,13 +7,14 @@ import { usePathname, useRouter } from 'next/navigation'
 import { supabase } from '@/lib/supabase'
 import {
   LayoutDashboard, Settings, CalendarDays, Users, Image as ImageIcon,
-  HelpCircle, CreditCard, Menu, X, LogOut, ChevronRight
+  HelpCircle, CreditCard, Menu, X, LogOut, ChevronRight, Layers
 } from 'lucide-react'
 
 const navItems = [
   { href: '/admin', label: 'Dashboard', icon: LayoutDashboard, exact: true },
   { href: '/admin/events', label: 'Events', icon: CalendarDays },
   { href: '/admin/gallery', label: 'Gallery', icon: ImageIcon },
+  { href: '/admin/hero', label: 'Hero Slides', icon: Layers },
   { href: '/admin/team', label: 'Team', icon: Users },
   { href: '/admin/faq', label: 'FAQ', icon: HelpCircle },
   { href: '/admin/payments', label: 'Payments', icon: CreditCard },

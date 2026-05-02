@@ -1,4 +1,4 @@
-﻿export const dynamic = 'force-dynamic'
+export const dynamic = 'force-dynamic'
 import Image from 'next/image'
 import Link from 'next/link'
 import { getSiteSettings } from '@/lib/settings'
@@ -9,6 +9,7 @@ import EventCard from '@/components/EventCard'
 import FadeIn from '@/components/ui/FadeIn'
 import SectionHeader from '@/components/ui/SectionHeader'
 import HeroOverlay from '@/components/HeroOverlay'
+import HeroSlideshow from '@/components/HeroSlideshow'
 import FacebookIcon from '@/components/ui/FacebookIcon'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 
@@ -36,6 +37,16 @@ async function getGalleryPreview(): Promise<GalleryPhoto[]> {
   } catch { return [] }
 }
 
+async function getHeroSlides(): Promise<string[]> {
+  try {
+    const { data } = await supabase
+      .from('hero_slides')
+      .select('image_url')
+      .order('sort_order', { ascending: true })
+    return (data ?? []).map((r: { image_url: string }) => r.image_url)
+  } catch { return [] }
+}
+
 async function getNextEvent(): Promise<Event | null> {
   try {
     const { data } = await supabase
@@ -51,23 +62,19 @@ async function getNextEvent(): Promise<Event | null> {
 }
 
 export default async function HomePage() {
-  const [settings, upcomingEvents, galleryPhotos, nextEvent] = await Promise.all([
+  const [settings, upcomingEvents, galleryPhotos, nextEvent, heroSlides] = await Promise.all([
     getSiteSettings(),
     getUpcomingEvents(),
     getGalleryPreview(),
     getNextEvent(),
+    getHeroSlides(),
   ])
 
   return (
     <>
-      {/* â”€â”€ HERO â”€â”€ */}
+      {/* ── HERO ── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
-        {settings.hero_bg_url ? (
-          <Image src={settings.hero_bg_url} alt="Hero background" fill priority className="object-cover" />
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0a0a0a] to-[#111111]" />
-        )}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-brand-bg" />
+        <HeroSlideshow slides={heroSlides} />
         <HeroOverlay />
 
         <div className="relative z-10 flex flex-col items-center text-center px-4 pt-20">

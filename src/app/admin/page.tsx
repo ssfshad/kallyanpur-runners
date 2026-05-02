@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import { supabase } from '@/lib/supabase'
 import AdminShell from '@/components/admin/AdminShell'
-import { CalendarDays, Image as ImgIcon, HelpCircle, Users, CreditCard, Settings, ArrowRight } from 'lucide-react'
+import { CalendarDays, Image as ImgIcon, HelpCircle, Users, CreditCard, Settings, ArrowRight, Layers } from 'lucide-react'
 
 interface Stats {
   events: number
@@ -52,6 +52,7 @@ export default function AdminDashboard() {
   const quickLinks = [
     { href: '/admin/events', label: 'Manage Events', icon: CalendarDays },
     { href: '/admin/gallery', label: 'Upload Photos', icon: ImgIcon },
+    { href: '/admin/hero', label: 'Hero Slides', icon: Layers },
     { href: '/admin/team', label: 'Edit Team', icon: Users },
     { href: '/admin/faq', label: 'Manage FAQ', icon: HelpCircle },
     { href: '/admin/payments', label: 'Payment Methods', icon: CreditCard },
